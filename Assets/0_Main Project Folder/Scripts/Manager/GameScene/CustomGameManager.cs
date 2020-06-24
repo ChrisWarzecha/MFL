@@ -36,7 +36,7 @@ public class CustomGameManager : MonoBehaviour
         
         //In-Game Event Subscriptions
         CustomEventManager.current.OnGameEnd += EndGame;
-        CustomEventManager.current.OnResetRound += ResetRound;
+        CustomEventManager.current.OnGoalScored += ResetRound;
     }
 
     void Update()
@@ -107,7 +107,7 @@ public class CustomGameManager : MonoBehaviour
         Debug.Log("I ended the game, Team " + indexTeamWon + " has won!");
     }
 
-    private void ResetRound()
+    private void ResetRound(int indexTeamGotScored)
     {
         Debug.Log("Round has been reset!");
         CustomEventManager.current.ResetRound();
