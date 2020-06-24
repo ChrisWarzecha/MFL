@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1903531083457740470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903531083457740468}
+  - component: {fileID: 1903531083457740469}
+  - component: {fileID: 823312811}
+  m_Layer: 0
+  m_Name: _Spell Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903531083457740468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903531083457740470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1903531083457740469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903531083457740470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c508c17ecf391489e8be3c441593ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellsPlayerOne: {x: 0, y: 0}
+  spellsPlayerTwo: {x: 0, y: 0}
+  spellsPlayerThree: {x: 0, y: 0}
+  spellsPlayerFour: {x: 0, y: 0}
+  onCooldown: 0
+  allSpells:
+  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+--- !u!114 &823312811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903531083457740470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef7d6b5c2455ac429952491833aaf3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellCombineDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
+    isExpanded: 1
+    _keyValues:
+    - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+    _keys:
+    - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+    _values:
+    - resultDictionary:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60,
+          type: 2}
+        isExpanded: 1
+        _keyValues:
+        - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+        _keys:
+        - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+        _values:
+        - {fileID: 11400000, guid: 9027c006f4701124ea9395c177d95499, type: 2}

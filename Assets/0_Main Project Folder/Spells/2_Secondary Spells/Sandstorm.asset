@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fd8baf826037445bb3ed631d397405, type: 3}
+  m_Name: Sandstorm
+  m_EditorClassIdentifier: 
+  spellName: Sandstorm
+  scale: 1.5
+  icon: {fileID: 21300000, guid: a9d9fa5d31c68bd43bbfbd1f9e2e10f2, type: 3}
+  splashArt: {fileID: 21300000, guid: 22d182fca57e33946b8bf41c91c3f3e8, type: 3}
+  playerCellBackground: {fileID: 21300000, guid: 22d182fca57e33946b8bf41c91c3f3e8,
+    type: 3}
+  cheesyVittyQuote: It's a work in Progress, okay?

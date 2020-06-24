@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709e5b462b408b5429e18fb9281afed2, type: 3}
+  m_Name: LightningSnap
+  m_EditorClassIdentifier: 
+  spellName: Lightning Snap
+  Color: {r: 0.87219757, g: 0.8867924, b: 0.1966002, a: 0}
+  icon: {fileID: 21300000, guid: 8f00aa97625073043bcb8bba4ab44f06, type: 3}
+  splashArt: {fileID: 21300000, guid: 22d182fca57e33946b8bf41c91c3f3e8, type: 3}
+  playerCellBackground: {fileID: 21300000, guid: 22d182fca57e33946b8bf41c91c3f3e8,
+    type: 3}
+  cheesyVittyQuote: Piss off I don't know any
