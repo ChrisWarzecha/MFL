@@ -50,10 +50,10 @@ MonoBehaviour:
   spellsPlayerFour: {x: 0, y: 0}
   onCooldown: 0
   allSpells:
+  - {fileID: 11400000, guid: 32d11471fc472eb47a7703c08f756b6e, type: 2}
+  - {fileID: 11400000, guid: 02adb7ff2c3f6964e8980f41688464d4, type: 2}
   - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-  - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+  - {fileID: 11400000, guid: d58d9a2c5f85d3e43bd08ded04a7186e, type: 2}
 --- !u!114 &823312811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,61 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef7d6b5c2455ac429952491833aaf3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCombineDictionary:
-    reorderableList:
-      canAdd: 1
-      canRemove: 1
-      draggable: 1
-      expandable: 1
-      multipleSelection: 1
-      isExpanded: 1
-      label:
-        m_Text: Keys
-        m_Image: {fileID: 0}
-        m_Tooltip: 
-      headerHeight: 18
-      footerHeight: 13
-      slideEasing: 0.15
-      verticalSpacing: 2
-      showDefaultBackground: 1
-      elementDisplayType: 0
-      elementNameProperty: 
-      elementNameOverride: 
-      elementIcon: {fileID: 0}
-    reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
-    isExpanded: 1
-    _keyValues:
-    - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-    _keys:
-    - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-    _values:
-    - resultDictionary:
-        reorderableList:
-          canAdd: 1
-          canRemove: 1
-          draggable: 1
-          expandable: 1
-          multipleSelection: 1
-          isExpanded: 1
-          label:
-            m_Text: Keys
-            m_Image: {fileID: 0}
-            m_Tooltip: 
-          headerHeight: 18
-          footerHeight: 13
-          slideEasing: 0.15
-          verticalSpacing: 2
-          showDefaultBackground: 1
-          elementDisplayType: 0
-          elementNameProperty: 
-          elementNameOverride: 
-          elementIcon: {fileID: 0}
-        reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60,
-          type: 2}
-        isExpanded: 1
-        _keyValues:
-        - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-        _keys:
-        - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
-        _values:
-        - {fileID: 11400000, guid: 9027c006f4701124ea9395c177d95499, type: 2}
+  spellCombinations: {fileID: 11400000, guid: 6e2df7d92e047914eac923c6d20aed4e, type: 2}

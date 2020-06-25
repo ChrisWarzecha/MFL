@@ -35,9 +35,9 @@ public class RelicController : MonoBehaviour
    private void Start()
    {
       //relicVelocity = this.transform.forward * speed;
-      CustomEventManager.current.OnRelicThrown += OnRelicThrown;
-      CustomEventManager.current.OnRelicDropped += OnRelicDropped;
-      CustomEventManager.current.OnResetRound += OnResetRound;
+      MFLEventManager.current.OnRelicThrown += OnRelicThrown;
+      MFLEventManager.current.OnRelicDropped += OnRelicDropped;
+      MFLEventManager.current.OnResetRound += OnResetRound;
    }
 
    /*
@@ -78,7 +78,7 @@ public class RelicController : MonoBehaviour
          gameObject.transform.parent.gameObject.transform.localRotation = Quaternion.identity;
 
          int pi = other.GetComponent<PlayerActions>().GetPlayerIndex();
-         CustomEventManager.current.RelicPickedUp(pi);
+         MFLEventManager.current.RelicPickedUp(pi);
       }
    }
 

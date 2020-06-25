@@ -89,6 +89,30 @@ public class @InputAsset : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""OpenConsole"",
+                    ""type"": ""Button"",
+                    ""id"": ""92b36b4f-a015-4c0f-9bd2-9905965bbb68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""SubmitInput"",
+                    ""type"": ""Button"",
+                    ""id"": ""93ac8a59-d6bd-4405-9a3a-2dc99678cd1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""LastCommand"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b69efe2-59d1-493d-a807-9c67a1c594ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -188,6 +212,39 @@ public class @InputAsset : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""CastSecondarySpell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17001378-f8c1-48ab-a775-12a2157b097e"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""526971ad-8fb7-4fbd-9209-abaa82ca9917"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SubmitInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35532c4d-e289-4c5e-9d75-cb3cb5ab794c"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LastCommand"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -318,6 +375,9 @@ public class @InputAsset : IInputActionCollection, IDisposable
         m_Player_ResetRelic = m_Player.FindAction("ResetRelic", throwIfNotFound: true);
         m_Player_CastPrimarySpell = m_Player.FindAction("CastPrimarySpell", throwIfNotFound: true);
         m_Player_CastSecondarySpell = m_Player.FindAction("CastSecondarySpell", throwIfNotFound: true);
+        m_Player_OpenConsole = m_Player.FindAction("OpenConsole", throwIfNotFound: true);
+        m_Player_SubmitInput = m_Player.FindAction("SubmitInput", throwIfNotFound: true);
+        m_Player_LastCommand = m_Player.FindAction("LastCommand", throwIfNotFound: true);
         // UI Navigation
         m_UINavigation = asset.FindActionMap("UI Navigation", throwIfNotFound: true);
         m_UINavigation_MoveCursor = m_UINavigation.FindAction("MoveCursor", throwIfNotFound: true);
@@ -385,6 +445,9 @@ public class @InputAsset : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ResetRelic;
     private readonly InputAction m_Player_CastPrimarySpell;
     private readonly InputAction m_Player_CastSecondarySpell;
+    private readonly InputAction m_Player_OpenConsole;
+    private readonly InputAction m_Player_SubmitInput;
+    private readonly InputAction m_Player_LastCommand;
     public struct PlayerActions
     {
         private @InputAsset m_Wrapper;
@@ -398,6 +461,9 @@ public class @InputAsset : IInputActionCollection, IDisposable
         public InputAction @ResetRelic => m_Wrapper.m_Player_ResetRelic;
         public InputAction @CastPrimarySpell => m_Wrapper.m_Player_CastPrimarySpell;
         public InputAction @CastSecondarySpell => m_Wrapper.m_Player_CastSecondarySpell;
+        public InputAction @OpenConsole => m_Wrapper.m_Player_OpenConsole;
+        public InputAction @SubmitInput => m_Wrapper.m_Player_SubmitInput;
+        public InputAction @LastCommand => m_Wrapper.m_Player_LastCommand;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -434,6 +500,15 @@ public class @InputAsset : IInputActionCollection, IDisposable
                 @CastSecondarySpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSecondarySpell;
                 @CastSecondarySpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSecondarySpell;
                 @CastSecondarySpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSecondarySpell;
+                @OpenConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenConsole;
+                @OpenConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenConsole;
+                @OpenConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenConsole;
+                @SubmitInput.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmitInput;
+                @SubmitInput.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmitInput;
+                @SubmitInput.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmitInput;
+                @LastCommand.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLastCommand;
+                @LastCommand.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLastCommand;
+                @LastCommand.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLastCommand;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -465,6 +540,15 @@ public class @InputAsset : IInputActionCollection, IDisposable
                 @CastSecondarySpell.started += instance.OnCastSecondarySpell;
                 @CastSecondarySpell.performed += instance.OnCastSecondarySpell;
                 @CastSecondarySpell.canceled += instance.OnCastSecondarySpell;
+                @OpenConsole.started += instance.OnOpenConsole;
+                @OpenConsole.performed += instance.OnOpenConsole;
+                @OpenConsole.canceled += instance.OnOpenConsole;
+                @SubmitInput.started += instance.OnSubmitInput;
+                @SubmitInput.performed += instance.OnSubmitInput;
+                @SubmitInput.canceled += instance.OnSubmitInput;
+                @LastCommand.started += instance.OnLastCommand;
+                @LastCommand.performed += instance.OnLastCommand;
+                @LastCommand.canceled += instance.OnLastCommand;
             }
         }
     }
@@ -570,6 +654,9 @@ public class @InputAsset : IInputActionCollection, IDisposable
         void OnResetRelic(InputAction.CallbackContext context);
         void OnCastPrimarySpell(InputAction.CallbackContext context);
         void OnCastSecondarySpell(InputAction.CallbackContext context);
+        void OnOpenConsole(InputAction.CallbackContext context);
+        void OnSubmitInput(InputAction.CallbackContext context);
+        void OnLastCommand(InputAction.CallbackContext context);
     }
     public interface IUINavigationActions
     {

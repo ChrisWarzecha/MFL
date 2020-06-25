@@ -157,7 +157,7 @@ public class UIPlayerController : MonoBehaviour
 
     private void OnAboutToLoadNewScene()
     {
-        CustomSpellManager.current.SetSpells(playerInput.playerIndex, lockedPrimarySpellIndex, lockedSecondarySpellIndex);
+        MFLSpellManager.current.SetSpells(playerInput.playerIndex, lockedPrimarySpellIndex, lockedSecondarySpellIndex);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadMode)

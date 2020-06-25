@@ -346,9 +346,12 @@ public void MoveCursor(Vector2 pi)
         
         primaryStamp.transform.localPosition = Vector3.zero;
         secondaryStamp.transform.localPosition = Vector3.zero;
-        
-        CustomEventManager.current.PlayerNotReady();
-        CustomEventManager.current.NotAllPlayersReady();
+
+        if (controller.playerReady)
+        {
+            MFLEventManager.current.PlayerNotReady();
+            MFLEventManager.current.NotAllPlayersReady();
+        }
     }
     #endregion
     
@@ -389,8 +392,6 @@ public void MoveCursor(Vector2 pi)
 
         if (xAxisRotation)
         {
-            Debug.Log(i_rotateDirection);
-
             var transposer = vCam.GetCinemachineComponent<CinemachineTransposer>();
             var yBody = transposer.m_FollowOffset.y - i_rotateDirection.y * verticalSensitivity * Time.fixedDeltaTime;
             yBody = Mathf.Clamp(yBody, minCamHeight, maxCamHeight);
@@ -425,14 +426,14 @@ public void MoveCursor(Vector2 pi)
     public void ThrowRelic()
     {
         //Debug.Log("I threw the relic");
-        CustomEventManager.current.RelicThrown();
+        MFLEventManager.current.RelicThrown();
     }
     
     
     public void DropRelic()
     {
         //Debug.Log("I dropped the relic");
-        CustomEventManager.current.RelicDropped();
+        MFLEventManager.current.RelicDropped();
     }
     
     public void Dash(Vector2 inputVector)
@@ -455,7 +456,7 @@ public void MoveCursor(Vector2 pi)
         if (!primOnCD)
         {
             StartCoroutine(PrimCooldown(controller.PrimarySpell.cooldown));
-            CustomSpellManager.current.CastSpell(transform, spellIndex);
+            MFLSpellManager.current.CastSpell(transform, spellIndex);
         }
     }
     
@@ -464,7 +465,7 @@ public void MoveCursor(Vector2 pi)
         if (!secOnCD)
         {
             StartCoroutine(SecCooldown(controller.SecondarySpell.cooldown));
-            CustomSpellManager.current.CastSpell(transform, spellIndex);
+            MFLSpellManager.current.CastSpell(transform, spellIndex);
         }
     }
 

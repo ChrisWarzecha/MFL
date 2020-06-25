@@ -76,6 +76,30 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "OpenConsole",
+                    "type": "Button",
+                    "id": "92b36b4f-a015-4c0f-9bd2-9905965bbb68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "SubmitInput",
+                    "type": "Button",
+                    "id": "93ac8a59-d6bd-4405-9a3a-2dc99678cd1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "LastCommand",
+                    "type": "Button",
+                    "id": "6b69efe2-59d1-493d-a807-9c67a1c594ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -175,6 +199,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "CastSecondarySpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17001378-f8c1-48ab-a775-12a2157b097e",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenConsole",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "526971ad-8fb7-4fbd-9209-abaa82ca9917",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SubmitInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35532c4d-e289-4c5e-9d75-cb3cb5ab794c",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LastCommand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

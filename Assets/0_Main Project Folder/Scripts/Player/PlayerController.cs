@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Console;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
 
     #region Spell Selection Scene related Variablen
-    private bool playerReady = false;
+    public bool playerReady = false;
     private bool sentEvent = false;
 
     private bool allReady = false;
@@ -74,13 +75,14 @@ public class PlayerController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         //Spell Selection Event Subscriptions
-        CustomEventManager.current.OnAllPlayersReady += OnAllPlayersReady;
-        CustomEventManager.current.OnNotAllPlayersReady += OnNotAllPlayersReady;
-        CustomEventManager.current.OnAboutToLoadNewScene += OnAboutToLoadNewScene;
+        MFLEventManager.current.OnAllPlayersReady += OnAllPlayersReady;
+        MFLEventManager.current.OnNotAllPlayersReady += OnNotAllPlayersReady;
+        MFLEventManager.current.OnAboutToLoadNewScene += OnAboutToLoadNewScene;
         
         //In-Game Event Subscriptions
-        CustomEventManager.current.OnRelicPickUp += OnRelicPickUp;
-        CustomEventManager.current.OnResetRound += OnResetRound;
+        MFLEventManager.current.OnRelicPickUp += OnRelicPickUp;
+        MFLEventManager.current.OnResetRound += OnResetRound;
+        MFLEventManager.current.OnReloadGame += OnReloadGame;
     }
 
     private void Update()
@@ -129,7 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             if (playerInput.playerIndex == 0)
             {
-                CustomGameManager.current.StartGame();
+                MFLGameManager.current.StartGame();
             }
         }
     }
@@ -159,7 +161,7 @@ public class PlayerController : MonoBehaviour
             playerReady = true;
             if (!sentEvent)
             {
-                CustomEventManager.current.PlayerIsReady();
+                MFLEventManager.current.PlayerIsReady();
                 sentEvent = true;
             }
         }
@@ -253,7 +255,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnAboutToLoadNewScene()
     {
-        CustomSpellManager.current.SetSpells(playerInput.playerIndex, lockedPrimarySpellIndex, lockedSecondarySpellIndex);
+        MFLSpellManager.current.SetSpells(playerInput.playerIndex, lockedPrimarySpellIndex, lockedSecondarySpellIndex);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadMode)
@@ -271,11 +273,11 @@ public class PlayerController : MonoBehaviour
             playerActions.controller = this;
             
             //Get Spells
-            Spells = CustomSpellManager.current.GetSpells(playerInput.playerIndex); // = new Vector2 (1/3) Bei den beiden oberen Spells
+            Spells = MFLSpellManager.current.GetSpells(playerInput.playerIndex); // = new Vector2 (1/3) Bei den beiden oberen Spells
             
             //assign scriptable object spells to slots
-            PrimarySpell = CustomSpellManager.current.allSpells[lockedPrimarySpellIndex - 1];
-            SecondarySpell = CustomSpellManager.current.allSpells[lockedSecondarySpellIndex - 1];
+            PrimarySpell = MFLSpellManager.current.allSpells[lockedPrimarySpellIndex - 1];
+            SecondarySpell = MFLSpellManager.current.allSpells[lockedSecondarySpellIndex - 1];
         }
         if (s.name == "Spell Select Test")
         {
@@ -284,8 +286,21 @@ public class PlayerController : MonoBehaviour
         
     }
     #endregion
+
+    private void OnOpenConsole()
+    {
+        DeveloperConsole.instance.SwitchConsole();
+    } 
     
+    private void OnSubmitInput()
+    {
+        DeveloperConsole.instance.EnterInput();
+    } 
     
+    private void OnLastCommand()
+    {
+        DeveloperConsole.instance.GetLastInput();
+    } 
     
     #region In-Game Scene related Event methods
     private void OnRelicPickUp(int pi)
@@ -303,6 +318,23 @@ public class PlayerController : MonoBehaviour
     private void OnResetRound()
     {
         playerActions.ResetPlayerPosition();
+    }
+
+    private void OnReloadGame()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        
+        //Spell Selection Event Unsubscriptions
+        MFLEventManager.current.OnAllPlayersReady -= OnAllPlayersReady;
+        MFLEventManager.current.OnNotAllPlayersReady -= OnNotAllPlayersReady;
+        MFLEventManager.current.OnAboutToLoadNewScene -= OnAboutToLoadNewScene;
+        
+        //In-Game Event Unsubscriptions
+        MFLEventManager.current.OnRelicPickUp -= OnRelicPickUp;
+        MFLEventManager.current.OnResetRound -= OnResetRound;
+        MFLEventManager.current.OnReloadGame -= OnReloadGame;
+        Destroy(this.gameObject);
+
     }
     #endregion
 

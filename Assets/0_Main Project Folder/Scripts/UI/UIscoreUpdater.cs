@@ -23,13 +23,13 @@ public class UIscoreUpdater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       CustomEventManager.current.OnGoalScored += UpdateScore;
+       MFLEventManager.current.OnGoalScored += UpdateScore;
        //InitScore();
     }
 
     private void UpdateScore(int indexTeamScored)
     {
-        Vector2 scoreCount = CustomScoreManager.current.GetScoreCount();
+        Vector2 scoreCount = MFLScoreManager.current.GetScoreCount();
         
         if (indexTeamScored == 1)
         {

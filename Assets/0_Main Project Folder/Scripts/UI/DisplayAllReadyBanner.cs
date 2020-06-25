@@ -17,8 +17,8 @@ public class DisplayAllReadyBanner : MonoBehaviour
 
     void Start()
     {
-        CustomEventManager.current.OnAllPlayersReady += ActivateImage;
-        CustomEventManager.current.OnNotAllPlayersReady += DeactivateImage;
+        MFLEventManager.current.OnAllPlayersReady += ActivateImage;
+        MFLEventManager.current.OnNotAllPlayersReady += DeactivateImage;
 
     }
 

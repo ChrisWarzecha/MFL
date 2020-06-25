@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b5b50b27af5624793e68626db00ec6, type: 3}
+  m_Name: Sandstorm_Sandstorm
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3228499540953315892, guid: b12f700b4624f4d4a86591e1efeb2aad, type: 3}
+  cooldown: 0
