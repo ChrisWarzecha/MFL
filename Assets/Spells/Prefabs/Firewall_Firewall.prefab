@@ -20580,7 +20580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: e689fbcbf5f37044280f553c61fb69fc, type: 2}
-  destroyAfter: 10
+  force: {x: 0, y: 1000, z: 0}
+  destroyAfter: 3
 --- !u!114 &1993344208757051270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20775,7 +20776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1887046093167838032
 Transform:
   m_ObjectHideFlags: 0
@@ -21313,7 +21314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1887236210941194526
 Transform:
   m_ObjectHideFlags: 0

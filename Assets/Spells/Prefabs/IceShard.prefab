@@ -27266,7 +27266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7592507724165175844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: 2.38}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2435751204429015706}
@@ -27294,7 +27294,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!114 &3396874445445013655
 MonoBehaviour:
@@ -27309,6 +27309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 02adb7ff2c3f6964e8980f41688464d4, type: 2}
+  force: {x: 0, y: 0, z: 500}
   speed: 10
   destroyAfter: 5
   spawnOnTriggerEnter:

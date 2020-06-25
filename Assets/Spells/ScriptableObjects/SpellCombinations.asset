@@ -86,7 +86,7 @@ MonoBehaviour:
           draggable: 1
           expandable: 1
           multipleSelection: 1
-          isExpanded: 0
+          isExpanded: 1
           label:
             m_Text: Keys
             m_Image: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
           elementIcon: {fileID: 0}
         reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60,
           type: 2}
-        isExpanded: 0
+        isExpanded: 1
         _keyValues:
         - {fileID: 11400000, guid: d58d9a2c5f85d3e43bd08ded04a7186e, type: 2}
         - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
@@ -110,13 +110,13 @@ MonoBehaviour:
         - {fileID: 11400000, guid: d58d9a2c5f85d3e43bd08ded04a7186e, type: 2}
         - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
         _values:
-        - destroySpell1: 0
+        - destroySpell1: 1
           destroySpell2: 0
           isTakingSpell2Position: 0
           spell: {fileID: 11400000, guid: 41363b0e49b6d1c4a8ca2033b06c6142, type: 2}
-        - destroySpell1: 0
-          destroySpell2: 0
-          isTakingSpell2Position: 0
+        - destroySpell1: 1
+          destroySpell2: 1
+          isTakingSpell2Position: 1
           spell: {fileID: 11400000, guid: 2532402f2fdad8545b47f370cd646b46, type: 2}
     - resultDictionary:
         reorderableList:
@@ -149,13 +149,13 @@ MonoBehaviour:
         - {fileID: 11400000, guid: d58d9a2c5f85d3e43bd08ded04a7186e, type: 2}
         - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
         _values:
-        - destroySpell1: 0
-          destroySpell2: 0
+        - destroySpell1: 1
+          destroySpell2: 1
           isTakingSpell2Position: 0
           spell: {fileID: 11400000, guid: e689fbcbf5f37044280f553c61fb69fc, type: 2}
-        - destroySpell1: 0
-          destroySpell2: 0
-          isTakingSpell2Position: 0
+        - destroySpell1: 1
+          destroySpell2: 1
+          isTakingSpell2Position: 1
           spell: {fileID: 11400000, guid: 79e73f873fa24224aa613316ba18fca6, type: 2}
     - resultDictionary:
         reorderableList:
@@ -186,7 +186,7 @@ MonoBehaviour:
         _keys:
         - {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
         _values:
-        - destroySpell1: 0
-          destroySpell2: 0
+        - destroySpell1: 1
+          destroySpell2: 1
           isTakingSpell2Position: 0
           spell: {fileID: 11400000, guid: 2c31b18196d405847b54e8d650d55bd2, type: 2}

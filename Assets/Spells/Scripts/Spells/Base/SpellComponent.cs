@@ -7,6 +7,9 @@ using UnityEngine;
 public abstract class SpellComponent : MonoBehaviour
 {
     public Spell spell;
+    public Vector3 force;
+    
+    private List<GameObject> collidedPlayers = new List<GameObject>();
 
     public void CastSpell(Vector3 direction)
     {
@@ -35,7 +38,17 @@ public abstract class SpellComponent : MonoBehaviour
                 SpellCombineList.instance.nextCombiningSpells.Add(gameObject,other.gameObject);
             } 
         }
-        
+        if (other.gameObject.tag == "Player")
+        {
+            if (other.gameObject.GetComponent<Rigidbody>() != null && !collidedPlayers.Contains(other.gameObject))
+            {
+                collidedPlayers.Add(other.gameObject);
+                Debug.Log("PUSH");
+                Rigidbody r = other.GetComponent<Rigidbody>();
+                
+                r.AddForce((Vector3)(transform.localToWorldMatrix*force) ,ForceMode.Impulse);
+            }
+        }
     }
 
     public abstract void OnTriggerEnterCall(Collider other);

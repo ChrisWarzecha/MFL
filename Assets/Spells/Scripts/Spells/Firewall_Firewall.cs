@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Firewall_Firewall : SpellComponent
 {
-
     public float destroyAfter;
     
     public override IEnumerator ExecuteSpell(Vector3 direction)

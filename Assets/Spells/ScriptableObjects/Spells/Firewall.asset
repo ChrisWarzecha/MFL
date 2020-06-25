@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Firewall
   m_EditorClassIdentifier: 
   prefab: {fileID: 7282234729979534405, guid: e5eaa7fc68d6c284297f775acf92f5ac, type: 3}
-  cooldown: 12
+  cooldown: 2
   offsetSpawnPosition: {x: 0, y: 0, z: 5}

@@ -380,7 +380,10 @@ public void MoveCursor(Vector2 pi)
 
             var moveTo = transform.forward * i_movement.y + transform.right * i_movement.x;
 
-            rBody.MovePosition(moveTo * Time.fixedDeltaTime * moveSpeed + rBody.transform.position);
+            if (moveTo.magnitude > 0f)
+            {
+                rBody.MovePosition(moveTo * Time.fixedDeltaTime * moveSpeed + rBody.transform.position);
+            }
         }
     }
 
