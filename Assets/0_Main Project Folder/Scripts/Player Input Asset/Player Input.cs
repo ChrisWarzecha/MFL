@@ -196,7 +196,7 @@ public class @InputAsset : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""558543b1-79fa-4e1d-80ce-89ce350c3add"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -207,7 +207,7 @@ public class @InputAsset : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4178b021-c13f-474e-b06e-0072b09edcb8"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

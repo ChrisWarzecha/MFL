@@ -8,7 +8,7 @@ public class Sandstorm : SpellComponent
     public float spellTime = 5;
     public Transform attractor;
 
-    public float force;
+    public float forcePull;
 
     public float rotationSpeed;
 
@@ -41,7 +41,7 @@ public class Sandstorm : SpellComponent
             {
                 if (inRange[i] != null)
                 {
-                    inRange[i].AddForceAtPosition((attractor.position - inRange[i].position).normalized * force,
+                    inRange[i].AddForceAtPosition((attractor.position - inRange[i].position).normalized * forcePull,
                         attractor.position, ForceMode.Acceleration);
                 }
             }

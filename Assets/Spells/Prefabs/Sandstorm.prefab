@@ -189,9 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: b15657bbbeab28347adb8b583f062ade, type: 2}
+  force: {x: 0, y: 0, z: 0}
   spellTime: 8
   attractor: {fileID: 7684154806728842195}
-  force: 50
+  forcePull: 50
   rotationSpeed: 500
   movementCurve:
     serializedVersion: 2

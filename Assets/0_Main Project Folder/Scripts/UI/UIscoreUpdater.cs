@@ -27,27 +27,42 @@ public class UIscoreUpdater : MonoBehaviour
        //InitScore();
     }
 
-    private void UpdateScore(int indexTeamScored)
+    private void UpdateScore(int indexTeamScoredOn)
     {
+        StartCoroutine(DelayUpdateScore(0.2f, indexTeamScoredOn));
+        
+    }
+
+    private IEnumerator DelayUpdateScore(float delaytime, int indexTeamScoredOn)
+    {
+        yield return new WaitForSeconds(delaytime);
+        
         Vector2 scoreCount = MFLScoreManager.current.GetScoreCount();
         
-        if (indexTeamScored == 1)
+        if (indexTeamScoredOn == 1)
         {
-            scoreCount.y += 1;
+            //scoreCount.y += 1;
             scoreTextTtwo.text = scoreCount.y.ToString();
         }
 
-        if (indexTeamScored == 2)
+        if (indexTeamScoredOn == 2)
         {
-            scoreCount.x += 1;
+            //scoreCount.x += 1;
             scoreTextTone.text = scoreCount.x.ToString();
         }
     }
-
+    
+    
+    
+    
     private void InitScore()
     {
         scoreTextTone.text = 0.ToString();
         
         scoreTextTtwo.text = 0.ToString();
     }
+    
+    
+    
+    
 }

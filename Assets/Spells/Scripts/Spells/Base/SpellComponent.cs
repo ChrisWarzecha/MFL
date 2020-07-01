@@ -20,6 +20,7 @@ public abstract class SpellComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        OnTriggerEnterCall(other);
         Debug.Log(this.name + " collided with " + other.gameObject.name);
         if (other.GetComponent<SpellComponent>())
         {

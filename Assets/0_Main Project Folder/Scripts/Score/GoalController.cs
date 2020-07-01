@@ -17,7 +17,7 @@ public class GoalController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Relic") && !scored)
+        if (other.CompareTag("Relic") && !scored && !other.isTrigger)
         {
             scored = true;
             MFLEventManager.current.GoalScored(indexTeamScoredOn);
